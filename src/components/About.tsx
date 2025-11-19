@@ -26,7 +26,7 @@ export const About = () => {
             <div className="grid sm:grid-cols-3 gap-6 pt-8">
               <div className="p-6 rounded-lg bg-card border border-border hover:border-primary transition-all hover-lift">
                 <div className="text-3xl font-bold text-primary mb-2">5+</div>
-                <div className="text-sm text-muted-foreground">Full-Stack Projects</div>
+                <div className="text-sm text-muted-foreground">AI Full-Stack Projects</div>
               </div>
               
               <div className="p-6 rounded-lg bg-card border border-border hover:border-primary transition-all hover-lift">

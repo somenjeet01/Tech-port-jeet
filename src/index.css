@@ -106,3 +106,75 @@ All colors MUST be HSL.
     background-size: 50px 50px;
   }
 }
+
+/* Print-specific styles for resume page */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .resume-container {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0.5in !important;
+    max-width: none !important;
+  }
+
+  body {
+    background: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Ensure page breaks */
+  h2 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  .page-break-before {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  .page-break-avoid {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Font adjustments for print */
+  body, * {
+    font-family: 'Times New Roman', serif !important;
+  }
+
+  h1 {
+    font-size: 24pt !important;
+  }
+
+  h2 {
+    font-size: 18pt !important;
+  }
+
+  h3 {
+    font-size: 14pt !important;
+  }
+
+  p, li, span {
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Remove unnecessary spacing in print */
+  .container {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  /* Ensure borders and colors print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

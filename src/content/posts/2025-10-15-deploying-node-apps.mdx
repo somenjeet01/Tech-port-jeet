@@ -1,0 +1,23 @@
+export const frontmatter = {
+  title: "Deploying Node.js Apps",
+  date: "2025-10-15",
+  categories: ["devops", "backend"],
+  tags: ["node", "deploy", "docker"],
+  summary: "Simple steps to containerize and deploy Node.js applications.",
+};
+
+# Deploying Node.js Apps
+
+This guide covers Dockerizing a Node.js app and deploying to a cloud provider.
+
+- Write a small `Dockerfile`
+- Push to container registry and deploy
+
+```dockerfile
+FROM node:20
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+CMD ["node","dist/index.js"]
+```

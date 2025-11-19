@@ -4,6 +4,7 @@ const experiences = [
   {
     role: "Software Development Engineer Intern",
     company: "Assessli",
+    website: "https://www.assessli.com/",
     location: "Kolkata",
     period: "July 2025 – Sept 2025",
     description: [
@@ -16,6 +17,7 @@ const experiences = [
   {
     role: "Freelance Website Developer",
     company: "Som Sattva — Honey Brand",
+    website: "https://somsattva.com/",
     location: "Remote",
     period: "2024",
     description: [
@@ -35,26 +37,39 @@ export const Experience = () => {
           <div className="font-mono text-sm text-primary mb-6">
             <span className="text-muted-foreground">$</span> cat experience.log
           </div>
-          
+
           <h2 className="text-4xl font-bold mb-12">Experience</h2>
-          
+
           <div className="space-y-8">
             {experiences.map((exp, idx) => (
-              <div 
+              <div
                 key={idx}
                 className="relative pl-8 pb-8 border-l-2 border-border last:pb-0 hover:border-primary transition-colors animate-fade-in"
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
                 {/* Timeline dot */}
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-background" />
-                
+
                 <div className="space-y-3">
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div>
-                      <h3 className="text-xl font-semibold text-foreground">{exp.role}</h3>
+                      <h3 className="text-xl font-semibold text-foreground">
+                        {exp.role}
+                      </h3>
                       <div className="flex items-center gap-2 text-primary font-medium mt-1">
                         <Briefcase className="h-4 w-4" />
-                        {exp.company}
+                        {exp.website ? (
+                          <a
+                            href={exp.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline hover:text-primary transition-colors"
+                          >
+                            {exp.company}
+                          </a>
+                        ) : (
+                          exp.company
+                        )}
                       </div>
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -62,9 +77,11 @@ export const Experience = () => {
                       {exp.period}
                     </div>
                   </div>
-                  
-                  <p className="text-sm text-muted-foreground">{exp.location}</p>
-                  
+
+                  <p className="text-sm text-muted-foreground">
+                    {exp.location}
+                  </p>
+
                   <ul className="space-y-2 text-muted-foreground">
                     {exp.description.map((item, i) => (
                       <li key={i} className="flex gap-2">
