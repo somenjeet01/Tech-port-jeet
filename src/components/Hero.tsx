@@ -75,7 +75,7 @@ export const Hero = () => {
             />
           </div>{" "}
           {/* Social Links */}
-          <div className="flex gap-4 justify-center pt-8">
+          <div className="flex gap-8 justify-center pt-4">
             <a
               href="https://github.com/somenjeet01"
               target="_blank"
@@ -94,7 +94,7 @@ export const Hero = () => {
             >
               <Linkedin className="h-5 w-5" />
             </a>
-            <a
+            {/* <a
               href="https://peerlist.io/somenjeet2004"
               target="_blank"
               rel="noopener noreferrer"
@@ -102,7 +102,9 @@ export const Hero = () => {
               aria-label="Peerlist"
             >
               <User className="h-5 w-5" />
-            </a>
+            </a> */}
+
+
             <ContactModal
               trigger={
                 <button
@@ -113,7 +115,7 @@ export const Hero = () => {
                 </button>
               }
             />
-            <ResumeDownloadIconButton />
+            {/* <ResumeDownloadIconButton /> */}
           </div>
         </div>
       </div>
